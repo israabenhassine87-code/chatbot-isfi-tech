@@ -2,9 +2,9 @@
 Assistant de diagnostic de pannes informatiques en ligne de commande.
 ## Groupe
 - Israa — Chef de projet & intégration
-- A — Configuration API
-- B — Logique chatbot
-- C — Interface console
+- Salsabile — Configuration API
+- Fatma — Logique chatbot
+- Islem — Interface console
 ## Lancer le projet
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
