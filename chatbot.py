@@ -15,12 +15,16 @@ def initialiser_historique():
 
 
 client = OpenAI(api_key=OPENAI_API_KEY)
+
 def envoyer_message(texte_utilisateur):
     messages.append({'role': 'user', 'content': texte_utilisateur})
-    reponse = client.chat.completions.create(
-        model='gpt-3.5-turbo',
-        messages=messages
-    )
-    contenu = reponse.choices[0].message.content
-    messages.append({'role': 'assistant', 'content': contenu})
-    return contenu
+    try:
+        reponse = client.chat.completions.create(
+            model='gpt-3.5-turbo',
+            messages=messages
+        )
+        contenu = reponse.choices[0].message.content
+        messages.append({'role': 'assistant', 'content': contenu})
+        return contenu
+    except Exception as e:
+        return f'Erreur API : {e}'
