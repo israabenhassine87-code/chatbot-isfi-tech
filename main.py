@@ -1,4 +1,5 @@
-# main.py — sera complété en Phase 4
-# Point d'entrée du chatbot ISFI Tech
+# main.py — version finale
+from interface import lancer_interface
+
 if __name__ == '__main__':
-    pass # TODO : intégration finale
+    lancer_interface()
