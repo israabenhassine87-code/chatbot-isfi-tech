@@ -1,6 +1,11 @@
 from chatbot import envoyer_message, initialiser_historique
 
 def lancer_interface():
+    print('=' * 50)
+    print(' Bienvenue sur le Chatbot ISFI Tech')
+    print(' Tapez "quitter" pour terminer.')
+    print('=' * 50)
+    print()
     initialiser_historique()
     while True:
         saisie = input('Vous : ').strip()
