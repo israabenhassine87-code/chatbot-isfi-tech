@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-ANTHROPIC_API_KEY = os.getenv('ANTHROPIC_API_KEY')
+GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 
-if not ANTHROPIC_API_KEY:
+if not GROQ_API_KEY:
     raise ValueError('Clé API manquante. Vérifie ton fichier .env')
