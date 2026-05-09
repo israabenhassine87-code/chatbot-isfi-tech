@@ -9,6 +9,6 @@ Assistant de diagnostic de pannes informatiques en ligne de commande.
 ```bash
 python3 -m venv .venv && source .venv/Scripts/activate
 pip install -r requirements.txt
-cp .env.example .env # puis remplir avec votre clé OpenAI
+cp .env.example .env # puis remplir avec votre clé Groq
 python main.py
 ```
