@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='fr'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Chatbot ISFI Tech</title>
+    <link rel='stylesheet' href='/static/style.css'>
+</head>
+
+<body>
+    <div class='chat-container'>
+        <div class='chat-header'>
+            <h1>Chatbot ISFI Tech</h1>
+            <p>Assistant de dépannage informatique</p>
+        </div>
+        <div id='chatbox'></div>
+        <div class='input-area'>
+            <input type='text' id='message' placeholder='Décrivez votre problème...' autocomplete='off'>
+            <button onclick='sendMessage()'>Envoyer</button>
+        </div>
+    </div>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('message');
+            const msg = input.value.trim();
+            if (!msg) return;
+            appendMessage('Vous', msg, 'user');
+            input.value = '';
+            fetch('/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: msg })
+            })
+                .then(r => r.json())
+                .then(data => appendMessage('Assistant', data.reply, 'bot'));
+        }
+        function appendMessage(sender, text, type) {
+            const box = document.getElementById('chatbox');
+            const div = document.createElement('div');
+            div.className = 'message ' + type;
+            div.innerHTML = '<span class="sender">' + sender + '</span>' + text;
+            box.appendChild(div);
+            box.scrollTop = box.scrollHeight;
+        }
+    </script>
+</body>
+
+</html>
