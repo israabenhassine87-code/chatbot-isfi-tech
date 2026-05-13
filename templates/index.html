@@ -35,6 +35,11 @@
                 .then(r => r.json())
                 .then(data => appendMessage('Assistant', data.reply, 'bot'));
         }
+        document.getElementById('message')
+            .addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') sendMessage();
+            });
+
         function appendMessage(sender, text, type) {
             const box = document.getElementById('chatbox');
             const div = document.createElement('div');
