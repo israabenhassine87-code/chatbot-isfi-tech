@@ -5,12 +5,17 @@ Assistant de diagnostic de pannes informatiques — Interface web.
 - A — Configuration API Groq
 - B — Logique Chatbot
 - C — Interface Web HTML/CSS
-## Lancer le projet
+## Lancer le projet pour la première fois
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate # Windows : .venv\Scripts\activate
 pip install -r requirements.txt
 cp .env.example .env # puis remplir GROQ_API_KEY
+python app.py
+```
+Ouvrir http://127.0.0.1:5000 dans le navigateur.
+## Lancer le projet lorsque tout est configuré
+```bash
 python app.py
 ```
 Ouvrir http://127.0.0.1:5000 dans le navigateur.
