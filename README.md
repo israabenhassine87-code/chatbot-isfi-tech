@@ -2,9 +2,9 @@
 Assistant de diagnostic de pannes informatiques — Interface web.
 ## Groupe
 - Israa — Chef de projet & Backend Flask
-- A — Configuration API Groq
-- B — Logique Chatbot
-- C — Interface Web HTML/CSS
+- Salsabil — Configuration API Groq
+- Fatma — Logique Chatbot
+- Islem — Interface Web HTML/CSS
 ## Lancer le projet pour la première fois
 ```bash
 python3 -m venv .venv
